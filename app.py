@@ -307,9 +307,10 @@ async def main():
         logging.error("❌ BOT_TOKEN_AUTO не задан в переменных окружения!")
         return
     
+  # Пока нет RollyPay, пропускаем проверку
     if not ROLLYPAY_API_KEY:
-        logging.error("❌ ROLLYPAY_API_KEY не задан в переменных окружения!")
-        return
+        logging.warning("⚠️ ROLLYPAY_API_KEY не задан. Бот работает в режиме 'Связь с менеджером'")
+    # Не выходим, а просто предупреждаем
     
     print("=" * 60)
     print("🚗 АВТОСЕРВИС БОТ ЗАПУЩЕН!")
